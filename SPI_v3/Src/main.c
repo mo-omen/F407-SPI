@@ -1,3 +1,14 @@
+/*
+ * Hey, so apparently USART1 DOES NOT WORK.
+ *
+ * This code was initially written with output via USART1 but for some reason it doesn't work with it.
+ * As of the time this message was written it is 4:30 am which gives us a total of 5 hours of debugging for nothing.
+ * The problem is that the physical PA9 node on this development board is not electrically clean.
+ *
+ * FU ST
+ */
+
+
 #include <stdint.h>
 #include <stdio.h>
 
