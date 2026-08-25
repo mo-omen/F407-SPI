@@ -19,11 +19,12 @@ int main(void) {
 	*RCC_AHB1ENR |= (1 << 0);
 	*RCC_APB2ENR |= (1 << 12);
 
+	*GPIOA_ODR &= ~(1 << 4); 	// ODR RESET
 	*GPIOA_MODER &= ~(0xFF << 8);
 	*GPIOA_MODER |= ((1 << 8) | (1 << 11) | (1 << 13) | (1 << 15));
 	*GPIOA_AFRL &= ~(0xFFF << 20);
 	*GPIOA_AFRL |= ((5 << 20) | (5 << 24) | (5 << 28));
-	*GPIOA_ODR |= (1 << 4);
+	*GPIOA_ODR |= (1 << 4);		// de-select slave
 
 	*SPI1_CR1 |= (1 << 3);	// Clock Speed divider '4'
 	*SPI1_CR1 |= (1 << 1);	// CLK polarity
